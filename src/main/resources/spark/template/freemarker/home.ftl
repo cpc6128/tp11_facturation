@@ -1,7 +1,5 @@
 <html>
 
-Bonjour !
-
-${(valeur)!}
+Template non utilisé
 
 </html>

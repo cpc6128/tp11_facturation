@@ -5,25 +5,29 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
-import fr.codevallee.formation.tp.service.MairieServiceImpl;
+import fr.codevallee.formation.tp.service.DemonstrationServiceImpl;
 
+/**
+ * Classe permettant d'obtenir les objets à partir de Spring
+ * 
+ * @author ronan
+ *
+ */
 @Component
 public class C implements ApplicationContextAware {
 
 	public static C i;
 
-	private MairieServiceImpl mairieServiceImpl = null;
-	public P p = null;
+	private DemonstrationServiceImpl demonstrationServiceImpl = null;
 
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		i = this;
-		mairieServiceImpl = applicationContext.getBean(MairieServiceImpl.class);
-		p = applicationContext.getBean(P.class);
+		demonstrationServiceImpl = applicationContext.getBean(DemonstrationServiceImpl.class);
 	}
 
-	public MairieServiceImpl getMairieServiceImpl() {
-		return mairieServiceImpl;
+	public DemonstrationServiceImpl getDemonstrationServiceImpl() {
+		return demonstrationServiceImpl;
 	}
 
 }
